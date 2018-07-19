@@ -1,0 +1,37 @@
+version: "3"
+services:
+  a:
+    image: pika:spike
+    build:
+      context: .
+    volumes:
+      - .:/opt/app
+    ports:
+      - "5001:5000"
+    environment:
+      - PROJECT_NAME=A
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+    command: 'flask run --host=0.0.0.0'
+  b:
+    image: pika:spike
+    volumes:
+      - .:/opt/app
+    environment:
+      - PROJECT_NAME=B
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+    ports:
+      - "5002:5000"
+    command: 'flask run --host=0.0.0.0'
+  c:
+    image: pika:spike
+    volumes:
+      - .:/opt/app
+    environment:
+      - PROJECT_NAME=C
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+    ports:
+      - "5003:5000"
+    command: 'flask run --host=0.0.0.0'
