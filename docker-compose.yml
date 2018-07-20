@@ -1,6 +1,6 @@
 version: "3"
 services:
-  a:
+  user:
     image: pika:spike
     build:
       context: .
@@ -9,29 +9,36 @@ services:
     ports:
       - "5001:5000"
     environment:
-      - PROJECT_NAME=A
-      - FLASK_APP=app.py
-      - FLASK_ENV=development
+      - PROJECT_NAME=user
+      - FLASK_APP=${FLASK_APP}
+      - FLASK_ENV=${FLASK_ENV}
     command: 'flask run --host=0.0.0.0'
-  b:
+  score:
     image: pika:spike
     volumes:
       - .:/opt/app
     environment:
-      - PROJECT_NAME=B
-      - FLASK_APP=app.py
-      - FLASK_ENV=development
+      - PROJECT_NAME=score
+      - FLASK_APP=${FLASK_APP}
+      - FLASK_ENV=${FLASK_ENV}
     ports:
       - "5002:5000"
     command: 'flask run --host=0.0.0.0'
-  c:
+  money:
     image: pika:spike
     volumes:
       - .:/opt/app
     environment:
-      - PROJECT_NAME=C
-      - FLASK_APP=app.py
-      - FLASK_ENV=development
+      - PROJECT_NAME=money
+      - FLASK_APP=${FLASK_APP}
+      - FLASK_ENV=${FLASK_ENV}
     ports:
       - "5003:5000"
     command: 'flask run --host=0.0.0.0'
+  mongo_user:
+    image: mongo:latest
+  mongo_score:
+    image: mongo:latest
+  mongo_money:
+    image: mongo:latest
+    

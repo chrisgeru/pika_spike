@@ -1,0 +1,16 @@
+.user {
+    background-color: #7FDBFF;
+    padding: 20px;
+}
+.score {
+    background-color: #01FF70;
+    padding: 20px;
+}
+.money {
+    background-color: #FFDC00;
+    padding: 20px;
+}
+
+.main_box {
+    background-color: #DDDDDD;
+}
