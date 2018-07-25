@@ -35,6 +35,12 @@ services:
     ports:
       - "5003:5000"
     command: 'flask run --host=0.0.0.0'
+  rabbit:
+    hostname: rabbit
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
   mongo_user:
     image: mongo:latest
   mongo_score:

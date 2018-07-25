@@ -1,13 +1,16 @@
 .user {
     background-color: #7FDBFF;
+    margin-top: 20vh;
     padding: 20px;
 }
 .score {
     background-color: #01FF70;
+    margin-top: 20vh;
     padding: 20px;
 }
 .money {
     background-color: #FFDC00;
+    margin-top: 20vh;
     padding: 20px;
 }
 

@@ -13,7 +13,7 @@
     <div class="row justify-content-md-center align-items-center">
         <div class="{{ name }} col-sm-12 col-md-4">
             <h1>Welcome to Project {{ name.title() }}</h1>
-            <form>
+            <form action="/{{ name }}">
                 <div class="form-group">
                     <label for="name">User</label>
                     <input {% if name != 'user' %}disabled{% endif %} class="form-control" type="text" id="name" value="{{ record.user }}">
@@ -41,5 +41,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<script src="../static/{{ name }}.js"></script>
 </body>
 </html>
