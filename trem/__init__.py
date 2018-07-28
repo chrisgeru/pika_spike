@@ -25,5 +25,5 @@ instance = app.config["LAZY_UMONGO"]
 # Config Views from Blueprint
 app.blueprint(bp)
 
-if __name__ == '__main__':
+def run():
     app.run(host="0.0.0.0", port=5000)

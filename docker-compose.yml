@@ -12,7 +12,6 @@ services:
       - PROJECT_NAME=user
       - FLASK_APP=${FLASK_APP}
       - FLASK_ENV=${FLASK_ENV}
-    command: 'flask run --host=0.0.0.0'
   score:
     image: pika:spike
     volumes:
@@ -23,7 +22,6 @@ services:
       - FLASK_ENV=${FLASK_ENV}
     ports:
       - "5002:5000"
-    command: 'flask run --host=0.0.0.0'
   money:
     image: pika:spike
     volumes:
@@ -34,7 +32,6 @@ services:
       - FLASK_ENV=${FLASK_ENV}
     ports:
       - "5003:5000"
-    command: 'flask run --host=0.0.0.0'
   rabbit:
     hostname: rabbit
     image: rabbitmq:3-management
